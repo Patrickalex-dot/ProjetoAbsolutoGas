@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Absoluto</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="stylelogin.css" rel="stylesheet">
+</head>
 <body>
     <section class="main">
         <header>
@@ -18,28 +21,29 @@
                 <li><a href="#">Fale Conosco</a></li>
             </ul>
         </header>
-   
-
-
-        <!--inicio do footer-->
-        <div class="footer">
-            <ul class="sci">
-                <li><a href="#">
-                        <ion-icon name="logo-facebook"></ion-icon>
-                    </a></li>
-                <li><a href="#">
-                        <ion-icon name="logo-instagram"></ion-icon>
-                    </a></li>
-                <li><a href="#">
-                        <ion-icon name="logo-whatsapp"></ion-icon>
-                        </ion-icon>
-                    </a></li>
-            </ul>
-         
+        <div class="container">
+            <div class="wrapper">
+                <div class="title"><span>Login Usuário</span></div>
+                <form action="#">
+                    <div class="row">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Email ou telefone" required>
+                    </div>
+                    <div class="row">
+                        <i class="fas fa-lock"></i>
+                        <input type="senha" placeholder="Senha" required>
+                    </div>
+                    <div class="pass"><a href="#">Digite sua senha?</a></div>
+                    <div class="row button">
+                        <input type="submit" value="Login">
+                    </div>
+                    <div class="signup-link">Não lembra sua senha? <a href="#">Click aqui</a></div>
+                </form>
+            </div>
         </div>
+
     </section>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
 </head>
 
