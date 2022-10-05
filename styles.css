@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
 body{
     background-color: #ddd;
 
 }
 .container{
-    width: 768px;
+    height: 800px;;
+    width: 600px;
     margin: 0 auto;
 }
 #form{
