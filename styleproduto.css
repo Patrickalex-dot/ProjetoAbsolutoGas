@@ -229,3 +229,34 @@
     height: 500px;
     
 }
+.shopping-item {
+  border: 1px solid #ddd;
+  float: right;
+  font-size: 18px;
+  margin-top: 40px;
+  padding: 10px;
+  position: relative;
+}
+.shopping-item a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+.shopping-item i.fa {
+  margin-left: 15px;
+}
+
+
+.shopping-item:hover {
+  background: none repeat scroll 0 0 #0c6351;
+  border-color: #1abc9c;
+}
+.shopping-item:hover a {
+  color: #fff;
+  
+}
+.shopping-item:hover .cart-amunt {
+  color: #fff;
+}
+.shopping-item:hover .product-count {
+  background: none repeat scroll 0 0 #000;
+}

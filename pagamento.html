@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absoluto</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="stylepagamento.css" rel="stylesheet">
+    <link rel="stylesheet" href="styleproduto.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" >
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <section class="main">
+        <header>
+            <div id="logo" class="col-sm-8">
+                <h1><a>Absoluto<span>Gás</span></a></h1>
+            </div>
+            <ul class="navigation">
+                <li><a href="inicial.html">Inicio</a></li>
+                <li><a href="produto.html">Produtos</a></li>
+                <li><a href="recarga.html">Recarga Gás</a></li>
+                <li><a href="cadastroCliente.html">Cadastre-se</a></li>
+                <li><a href="faleConosco.html">Fale Conosco</a></li>
+            </ul>
+           
+            
+         
+        </header>
+   
+        
+        <div class="box">
+        
+          
+          <div class="mdl">
+          <div class="circles">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+          </div>  
+              <h1 class="title">
+                Por favor insira seu cartão <br>para efetuar o pagamento.
+              </h1>
+            
+            <div class="card">
+        
+              <form>
+                <div class="logo">
+                  <?xml version="1.0" encoding="UTF-8"?>
+                  <svg width="48px" height="48px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title>Group</title>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Group" fill="#FFFFFF">
+                        <circle id="Oval" cx="16" cy="16" r="16"></circle>
+                        <circle id="Oval" cx="16" cy="48" r="16"></circle>
+                        <circle id="Oval" cx="48" cy="16" r="16"></circle>
+                        <circle id="Oval" cx="48" cy="48" r="16"></circle>
+                      </g>
+                    </g>
+                  </svg>
+        
+                </div>
+                <div class="card-number">
+                  <label>Numero do cartão</label>
+                  <input id="card-number" placeholder="1234 1234 1234 1234" type="text" required maxlength="19">
+                  <span class="underline"></span>
+        
+                </div>
+                <br>
+                <div class="group">
+                  <div class="card-name">
+                    <label>Nome</label>
+                    <input id="card-name" placeholder="Nome nome" type="text" required>
+                    <span class="underline"></span>
+        
+                  </div>
+                  <div class="expiration-date">
+                    <label>Data valid.</label>
+                    <input id="card-exp" placeholder="10/25" type="text" maxlength="5" required>
+                    <span class="underline"></span>
+        
+                  </div>
+                  <div class="ccv">
+                    <label>CCV</label>
+                    <input id="card-ccv" placeholder="123" type="text" maxlength="3" required>
+                    <span class="underline"></span>
+                  </div>
+        
+                </div>
+              </form>
+            </div>
+          </div>
+        
+        </div>
+ 
+
+
+        <div class="footer">
+            <ul class="sci">
+                <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-whatsapp"></ion-icon></ion-icon></a></li>
+            </ul>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+   
+ <script>   
+/* Card Number Spacing */
+
+$('#card-number').on('keypress change blur', function () {
+  $(this).val(function (index, value) {
+    return value.replace(/[^a-z0-9]+/gi, '').replace(/(.{4})/g, '$1 ');
+  });
+});
+
+$('#card-number').on('copy cut paste', function () {
+  setTimeout(function () {
+    $('#card-number').trigger("change");
+  });
+});
+
+
+/* Exp. Date Slash */
+
+$('#card-exp').on('input',function(){
+    var curLength = $(this).val().length;
+    if(curLength === 2){
+       var newInput = $(this).val();
+        newInput += '/';
+        $(this).val(newInput);
+    }
+
+
+});
+
+// var characterCount
+// $('#card-exp').on('input',function(e){
+//     if($(this).val().length == 2 && characterCount < $(this).val().length) {
+//         $(this).val($(this).val()+'/');
+//     }
+//     characterCount = $(this).val().length
+// });
+</script>
+</body>
+</head>
+
+</html>
