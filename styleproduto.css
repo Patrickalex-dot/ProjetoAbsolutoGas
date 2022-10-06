@@ -214,11 +214,13 @@
   text-decoration: none;
   font-weight: 700;
   margin-top: 5px;
+  width: 163px;
+  text-align: center;
 }
 
 .container-produto .box .content a:hover
 {
-  background: #ffcf4d;
+  background: #2364d2;
   border: 1px solid rgba(255, 0, 88, 0.4);
   box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
 }
