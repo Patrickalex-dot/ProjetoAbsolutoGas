@@ -11,7 +11,7 @@ body{
 #form{
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(23, 173, 15, 0.596);
+    background-color: #36aa27;
     border-radius: 12px 40px;
     border: 1px solid rgba(255, 255, 255, 0.125);
     
@@ -67,7 +67,7 @@ font-family: 'Ubuntu', sans-serif;
 {
 position: relative; 
 min-height: 100vh;
-background: linear-gradient(#20b1ad,#50d7d3,#80fdf8);
+background: #000000;
 padding: 30px 100px;
 display: flex;
 justify-content: center;

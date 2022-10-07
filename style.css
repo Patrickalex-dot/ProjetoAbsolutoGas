@@ -18,7 +18,7 @@
 {
   position: relative; 
   min-height: 100vh;
-  background: linear-gradient(#20b1ad,#50d7d3,#80fdf8);
+  background: #000000;
   padding: 30px 100px;
   display: flex;
   justify-content: center;
@@ -35,7 +35,7 @@
     transform: translate(-50%,-50%);
     font-size: 16vw;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.199);
+    color: rgba(255, 255, 255, 0.062);
 }
 header
 {
