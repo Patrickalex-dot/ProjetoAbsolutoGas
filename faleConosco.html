@@ -1,16 +1,78 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
+<html>
+  <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Absoluto</title>
     <link rel="stylesheet" href="style.css">
-    <link href="styleconosco.css" rel="stylesheet">
-</head>
-<body>
-    <section class="main">
-        <header>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.13/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.13/"></script>
+    <script>
+       require([
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/widgets/Search"
+       ], function(Map, MapView, Search) {
+
+      var map = new Map({
+        basemap: "streets-navigation-vector"
+      });
+
+      var view = new MapView({
+        container: "viewDiv",
+        map: map,
+        center: [-43.2105, -22.9519], // longitude, latitude
+        zoom: 13
+      });
+
+      // Search widget
+      var search = new Search({
+        view: view
+      });
+
+      view.ui.add(search, "top-right");
+
+      view.on("click", function(evt){
+      search.clear();
+      view.popup.clear();
+      if (search.activeSource) {
+          var geocoder = search.activeSource.locator; // World geocode service
+          var params = {
+            location: evt.mapPoint
+          };
+          geocoder.locationToAddress(params)
+            .then(function(response) { // Show the address found
+              var address = response.address;
+              showPopup(address, evt.mapPoint);
+            }, function(err) { // Show no address found
+              showPopup("Nenhum endereço encontrado.", evt.mapPoint);
+            });
+        }
+      });
+      function showPopup(address, pt) {
+        view.popup.open({
+          title: "Coordenada: " + Math.round(pt.longitude * 100000)/100000 + ";" + Math.round(pt.latitude * 100000)/100000,
+          content: address,
+          location: pt
+        });
+      }
+    });
+    </script>
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Mapa Absoluto Gás</title>
+    <style>
+      html, body, #viewDiv {
+        padding: 0;
+        margin-left: 200px;
+        margin-top: 80px;
+        height: 700px;
+        width: 600px;
+       
+      }
+   
+    </style>
+         <header>
             <div id="logo" class="col-sm-8">
                 <h1><a>Absoluto<span>Gás</span></a></h1>
             </div>
@@ -23,20 +85,8 @@
                 <li><a href="login.html">Login</a></li>
             </ul>
         </header>
-     
-      
-     
-
-
-
-
-
-
-    </section>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-   
-</body>
-</head>
-
+  </head>
+  <body>
+    <div id="viewDiv"></div>
+  </body>
 </html>
