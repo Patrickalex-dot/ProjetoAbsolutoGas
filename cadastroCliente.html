@@ -25,15 +25,11 @@
             <form id="form" class="row">
                 <h1 class="col-12">Cadastro de Cliente</h1>
                 <div class="col-6">
-                    <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome">
+                    <label for="nomeCompleto">Nome Completo</label>
+                    <input type="text" name="nomeCompleto" id="nomeCompleto">
                     <i class="fa-solid fa-user"></i>
                 </div>
-                <div class="col-6">
-                    <label for="sobrenome">Sobrenome</label>
-                    <input type="text" name="sobrenome" id="sobrenome">
-                    <i class="fa-solid fa-user"></i>
-                </div>
+            
                 <div class="col-12">
                     <label for="email">E-mail</label>
                     <input type="email" name="email" id="email">
@@ -66,13 +62,22 @@
                     <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00">
                     <i class="fa-solid fa-address-card"></i>
                 </div>
-                <div class="col-12">
-                    <label for="observacoes">Referência</label>
-                    <textarea id="observacoes" name="observacoes"></textarea>
+                
+                <div class="col-12" id="areaEndereco">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" name="rua" id="rua" placeholder="rua" value="">
+                    <br>
+                    <br>
+                    <input type="text" name="numero" id="numero" placeholder="numero" value="">
+                    <br>
+                    <br>
+                    <label for="complemento">Complemento</label>
+                    <textarea id="complemento" name="complemento"></textarea>
                 </div>
                 <div class="col-4">
-                    <input type="submit" value="Salvar cadastro">
+                    <input type="submit" oneclick= cadastrar() value="Salvar cadastro">
                 </div>
+                
             </form>
         </div>
 
@@ -97,6 +102,7 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
+<script src="Cadastro/cadastroCliente.js"></script>
 </head>
 
 </html>
