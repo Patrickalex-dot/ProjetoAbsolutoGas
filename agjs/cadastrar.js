@@ -1,4 +1,4 @@
-/convertendo o texto e adicionando em tela;
+//convertendo o texto e adicionando em tela;
 function converterParaDomElement(str) {
     let parser = new DOMParser();
     let doc = parser.parseFromString(str, 'text/html');
@@ -25,6 +25,8 @@ function converterParaDomElement(str) {
     console.log(bairro);
     let referencia = document.querySelector('#referencia').value;  
     console.log(referencia);
+    let tipoContato = document.querySelector('#tipoContato').value;  
+    console.log(tipoContato);
     
     let cliente = {
       nome,
@@ -35,7 +37,8 @@ function converterParaDomElement(str) {
       numero,
       cidade,
       bairro,
-      referencia
+      referencia,
+      tipoContato
     };
     let SalvarClienteModel = {
       cliente
