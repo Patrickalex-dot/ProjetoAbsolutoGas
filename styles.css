@@ -4,7 +4,7 @@ body{
 
 }
 .container{
-    height: 800px;;
+    height: 100%;
     width: 600px;
     margin: 0 auto;
 }
@@ -65,10 +65,10 @@ font-family: 'Ubuntu', sans-serif;
 }
 .main
 {
-position: relative; 
-min-height: 100vh;
+position: relative ; 
+min-height: 150vh;
 background: linear-gradient(#000000,#2b2929,#353333) ;
-padding: 30px 100px;
+padding: 30px 80px;
 display: flex;
 justify-content: center;
 align-items: center;
