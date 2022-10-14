@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Absoluto</title>
+    <script src="agjs/cadastrar.js"></script>
     <link rel="stylesheet" href="styles.css">
  
 <body>
@@ -21,6 +22,7 @@
             </ul>
         </header>
         
+        
         <div class="container">
             <form id="form" class="row">
                 <h1 class="col-12">Cadastro de Cliente</h1>
@@ -31,26 +33,37 @@
                 </div>
             
                 <div class="col-12">
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email">
+                    <label for="rua">Rua</label>
+                    <input type="text" name="rua" id="rua">
                     <i class="fa-solid fa-envelope"></i>
                 </div>
                 <div class="col-2">
-                    <label for="ddd">DDD</label>
-                    <input type="text" name="ddd" id="ddd" placeholder="000">
+                    <label for="numero">N°</label>
+                    <input type="text" name="numero" id="numero" placeholder="000">
                 </div>
-                <div class="col-5">
-                    <label for="telefone">Telefone</label>
-                    <input type="text" name="telefone" id="telefone" placeholder="00000-0000">
-                    <i class="fa-solid fa-phone"></i>
+                <div class="col-12">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" name="cidade" id="cidade">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="col-12">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" name="bairro" id="bairro">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="col-12">
+                    <label for="referencia">Referência</label>
+                    <input type="text" name="referencia" id="referencia">
+                    <i class="fa-solid fa-envelope"></i>
                 </div>
                 <div class="col-5">
                     <label for="tipo">Tipo</label>
-                    <select name="tipo" id="tipo" >
+                    <input type="text" name="tipoContato" id="tipoContato" placeholder="Whatsapp / Residencial / Comercial">
+                    <!-- <select name="tipo" id="tipo" >
                         <option value="1" selected>Whatsapp</option>
                         <option value="2">Residencial</option>
                         <option value="3">Comercial</option>
-                    </select>
+                    </select> -->
                 </div>
                 <div class="col-6">
                     <label for="nascimento">Nascimento</label>

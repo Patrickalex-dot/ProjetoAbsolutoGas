@@ -95,6 +95,38 @@
             </div>
           </div>
         </div>
+     
+
+        <div class="container2">
+          <div class="tab"></div>
+          <div class="paid"><p>Pagamento efetuado com sucesso</p></div>
+          <div class="receipt">
+          <div class="paper">
+            <div class="title">Recibo</div>
+            <div class="date">Date: 20/07/2022</div>    
+            <table>
+              <tbody>
+                <tr><td>2 x botijões P13</td><td class="right">$240</td></tr>
+                 <tr><td>1 x Recarga P13</td><td class="right">$100</td></tr>
+                <tr><td>5 x Botijões vazios P45</td><td class="right">$1000</td></tr>
+                <tr><td colspan="2" class="center"><input type="button" value="Pagar" onClick="Pagar()"/></td></tr>
+            </tbody>
+            </table>
+            <div class="sign center">
+              <div class="barcode"></div>
+              <br/>
+              0123456789
+              <br/>
+              <div class="obrigado">
+                Obrigado por sua compra
+              </div>
+            </div>
+          </div>
+          
+          <div>
+        </div>
+        
+        
 
         <div class="footer">
             <ul class="sci">
@@ -106,7 +138,13 @@
     </section>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-   
+    <script>
+    function Pagar()
+{
+  $(".receipt").slideUp("slow");
+  $(".paid").slideDown("slow");
+}
+</script>
  <script>   
 /* Card Number Spacing */
 
