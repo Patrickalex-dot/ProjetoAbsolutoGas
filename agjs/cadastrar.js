@@ -1,4 +1,4 @@
-/convertendo o texto e adicionando em tela;
+//convertendo o texto e adicionando em tela;
 function converterParaDomElement(str) {
     let parser = new DOMParser();
     let doc = parser.parseFromString(str, 'text/html');
