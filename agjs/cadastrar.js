@@ -7,14 +7,16 @@ function converterParaDomElement(str) {
   
   //pegando os dados do formulário
   async function CapturarDadosPessoa(){
-    let nome = document.querySelector('#nome').value;  
+    let nome = document.querySelector('#nomeCompleto').value;  
     console.log(nome);
     let cpf = document.querySelector('#cpf').value;  
     console.log(cpf);
-    let dataNascimento = document.querySelector('#dataNascimento').value;  
+    let dataNascimento = document.querySelector('#nascimento').value;  
     console.log(dataNascimento);
     let telefone = document.querySelector('#telefone').value;  
     console.log(telefone);
+    let tipoContato = document.querySelector('#tipoContato').value;
+    console.log(tipoContato);
     let rua = document.querySelector('#rua').value;  
     console.log(rua);
     let numero = document.querySelector('#numero').value;  
@@ -25,8 +27,7 @@ function converterParaDomElement(str) {
     console.log(bairro);
     let referencia = document.querySelector('#referencia').value;  
     console.log(referencia);
-    let tipoContato = document.querySelector('#tipoContato').value;  
-    console.log(tipoContato);
+    
     
     let cliente = {
       nome,

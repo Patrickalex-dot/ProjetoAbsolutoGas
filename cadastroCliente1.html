@@ -28,33 +28,22 @@
                 <h1 class="col-12">Cadastro de Cliente</h1>
                 <div class="col-6">
                     <label for="nomeCompleto">Nome Completo</label>
-                    <input type="text" name="nomeCompleto" id="nomeCompleto">
+                    <input type="text" name="nomeCompleto" placeholder="Digite aqui" id="nomeCompleto">
                     <i class="fa-solid fa-user"></i>
                 </div>
-            
-                <div class="col-12">
-                    <label for="rua">Rua</label>
-                    <input type="text" name="rua" id="rua">
-                    <i class="fa-solid fa-envelope"></i>
+                <div class="col-6">
+                    <label for="cpf">CPF</label>
+                    <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00">
+                    <i class="fa-solid fa-address-card"></i>
+                </div>
+                <div class="col-6">
+                    <label for="nascimento">Nascimento</label>
+                    <input type="date" name="nascimento" id="nascimento" placeholder="00/00/0000">
+                    <i class="fa-solid fa-calendar"></i>
                 </div>
                 <div class="col-2">
-                    <label for="numero">N°</label>
-                    <input type="text" name="numero" id="numero" placeholder="000">
-                </div>
-                <div class="col-12">
-                    <label for="cidade">Cidade</label>
-                    <input type="text" name="cidade" id="cidade">
-                    <i class="fa-solid fa-envelope"></i>
-                </div>
-                <div class="col-12">
-                    <label for="bairro">Bairro</label>
-                    <input type="text" name="bairro" id="bairro">
-                    <i class="fa-solid fa-envelope"></i>
-                </div>
-                <div class="col-12">
-                    <label for="referencia">Referência</label>
-                    <input type="text" name="referencia" id="referencia">
-                    <i class="fa-solid fa-envelope"></i>
+                    <label for="numero">telefone</label>
+                    <input type="text" name="numero" id="telefone" placeholder="telefone">
                 </div>
                 <div class="col-5">
                     <label for="tipo">Tipo</label>
@@ -64,29 +53,31 @@
                         <option value="2">Residencial</option>
                         <option value="3">Comercial</option>
                     </select> -->
+                    
                 </div>
-                <div class="col-6">
-                    <label for="nascimento">Nascimento</label>
-                    <input type="date" name="nascimento" id="nascimento" placeholder="00/00/0000">
-                    <i class="fa-solid fa-calendar"></i>
-                </div>
-                <div class="col-6">
-                    <label for="cpf">CPF</label>
-                    <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00">
-                    <i class="fa-solid fa-address-card"></i>
-                </div>
-                
                 <div class="col-12" id="areaEndereco">
-                    <label for="endereco">Endereço</label>
-                    <input type="text" name="rua" id="rua" placeholder="rua" value="">
+                    <label for="endereco">Rua</label>
+                    <input type="text" name="rua" id="rua" placeholder="Digite aqui" value="">
                     <br>
                     <br>
-                    <input type="text" name="numero" id="numero" placeholder="numero" value="">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" name="cidade" placeholder="Digite aqui" id="cidade">
+                    <i class="fa-solid fa-envelope"></i>
+                    <br>
+                    <br>
+                    <label for="numero">Numero</label>
+                    <input type="text" name="numero" id="numero" placeholder="Digite aqui" value="">
+                    <br>
+                    <br>
+                    <label for="bairro">Bairro</label>
+                    <input type="text" name="bairro" placeholder="Digite aqui" id="bairro">
+                    <i class="fa-solid fa-envelope"></i>
                     <br>
                     <br>
                     <label for="complemento">Complemento</label>
-                    <textarea id="complemento" name="complemento"></textarea>
+                    <textarea id="complemento" name="complemento" placeholder="Digite aqui" ></textarea>
                 </div>
+                
                 <div class="col-4">
                     <input type="submit" oneclick= cadastrar() value="Salvar cadastro">
                 </div>
