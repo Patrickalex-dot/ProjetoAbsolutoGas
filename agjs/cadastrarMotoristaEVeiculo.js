@@ -9,17 +9,23 @@ async function capturarDadosMotorista(){
     console.log(nome);
     let cnh = document.querySelector("#cnh").value;
     console.log(cnh);
-    let telefone = document.querySelector("telefone").value;
+    let telefone = document.querySelector("#telefone").value;
     console.log(telefone);
-
+    let placa = document.querySelector("#placa").value;
+    console.log(placa);
+    let veiculo = {
+        placa,
+    };
     let Motorista = {
         nome,
         cnh,
         telefone,
+        veiculo,
     };
 
     let SalvarMotoristaModel = {
         Motorista,
+        veiculo,
     };
 
     console.log(SalvarMotoristaModel);
