@@ -20,7 +20,7 @@ body{
   position: absolute;
   margin: auto;
   top: 0;
-  right: 0;
+  right: 80vh;
   bottom: 0;
   left: 0;
 
@@ -139,6 +139,7 @@ h1{
 }
 
 .card {
+ 
   height: 300px;
   width: 420px;
   border-radius: 20px;
@@ -450,6 +451,7 @@ label {
 /*recibo inicio*/
 body
 {
+  
   display: block;
   margin:0 auto;
   padding:0;
@@ -480,7 +482,8 @@ body
 }
 .container2
 {
-  width:350px;
+
+  width:220vh;
   margin:50px auto;
 }
 .tab
@@ -496,7 +499,7 @@ body
    background-color:#FAFAF9;
   padding-top:20px;
     width:300px;
-  height:300px;
+  height:350px;
   margin:-5px auto;
   border-radius:5px 5px 50px 50px;
   -moz-box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -552,7 +555,7 @@ table
 input[type=button]
 {
   background-color:#00874C;
-  outlie:none;
+  outline:none;
   border:1px solid #ccc;
   padding:10px;
   border-radius:5px;
