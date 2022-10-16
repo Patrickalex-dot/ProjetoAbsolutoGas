@@ -1,244 +1,157 @@
-*{
-    font-family: 'Open Sans', sans-serif;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  --black: #283830;
+  --grey: #127070;
+  --white: #ffffff;
+  --red: #d14b6d;
+
+  --blue-green: #5cd6c1;
+  --dark-green: #3d7f60;
+  --mid-green: #1b487a;
+  --light-green: #293391;
+
+  font-family: "", sans-serif;
+  color: var(--black);
+  background: linear-gradient(#182386f8,#293391,#88a5b8) ;
+
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background: white;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+  background: var(--mid-green);
+  color: var(--white);
+  font-weight: 900;
+  padding: 20px;
+  margin: 5px;
+  border-radius: 1.6rem;
+}
+
+.row {
+  background: var(--white);
+  color: var(--black);
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 1.6rem;
+}
+
+button {
+  background: var(--light-green);
+  color: var(--white);
+  font-weight: 700;
+
+  border: none;
+  border-radius: 1.6rem;
+  padding: 0.8rem;
+}
+button:hover {
+  filter: brightness(110%);
+}
+button.delete {
+  background: var(--red);
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .data-list {
+    max-height: 95vh;
+    /* background-color: #01c99e; */
+    overflow-y: auto;
+  }
+  .data-list::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: var(--white);
+    border-radius: 5px;
+  }
+  .data-list::-webkit-scrollbar-thumb {
+    background-color: var(--light-green);
+    border-radius: 5px;
+  }
+
+  .header {
+    display: none;
+  }
+  /* .row{
+      display:flex;
+      grid-template-columns: 2fr 8fr
+    } */
+  .col {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    text-align: center;
+  }
+  .col label {
+    font-weight: 900;
+    text-align: left;
+  }
+
+  button {
+    margin: 0.4rem 0;
+  }
+
+  button.delete.pc {
+    display: none;
+  }
+  button.delete.mobile {
+    margin-right: 0.4rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .data-list {
+    max-height: 85vh;
+    /* background-color: #01c99e; */
+    overflow-y: auto;
+  }
+  .data-list::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: var(--white);
+    border-radius: 5px;
+  }
+  .data-list::-webkit-scrollbar-thumb {
+    background-color: var(--light-green);
+    border-radius: 5px;
+  }
+
+  .header,
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr 3fr 1fr 1fr;
+    align-items: center;
+  }
+
+  .col label {
+    display: none;
+  }
+
+  .col {
     padding: 0;
-    margin: 0;
-    list-style: none;
-    box-sizing: border-box;
   }
-  
-  main{
-    padding: 5%;
+  button.delete.pc {
+    margin-right: 0.4rem;
   }
-  
-  header h1{
-    font-size: 1.5rem;
+  button.delete.mobile {
+    display: none;
   }
-  
-  .barra{
-    justify-content: space-between;
-    display: flex;
-    align-items: center; 
-    background: #339999;
-    color: rgba(255, 255, 255, 0.97);
-  }
-  
-  .barra :first-child{    /* icone info */
-    padding-left: 5%;
-  }
-  
-  .barra :last-child{   /* icone voltar */
-    padding-right: 5%;
-  }
-  
-  #info,                   
-  #voltar{                  
-    font-size: 50px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    cursor: pointer;
-  }
-  
-  
-  /* PESQUISAR */
-  
-  #search{
-    font-size: 40px;
-    padding-left: 1.5rem;
-  }
-  
-  .home input[type="text"]{
-    padding-left: 4rem;
-  }
-  
-  .input-container{
-    position: relative;
-  }
-  
-  .input-container input{
-    border-radius: 50px;
-    margin-bottom: 100px;
-    margin-top: 150px;
-    display: flex;
-    height: 90px;
-    width: 100%; 
-    font-size: 20px;
-    border: 1px solid;
-    outline: none;
-  }
-  
-  .input-container i{
-    position: absolute;
-    line-height: 95px;
-  }
-  
-  /* LISTA DO DOS CONTATOS ADICIONADOS */
-  
-  li{
-    font-size: 16px;
-    border-top: 1px solid #ddd;
-    padding: 20px 0px 20px 0px;
-  }
-  
-  #load :last-child{
-    border-bottom: 1px solid #ddd;
-  }
-  
-  
-  /* INPUTS E SELECTS DA CLASS(.)CADASTRO */
-  .cadastro form :nth-child(1){
-    display: flex;
-    flex-direction: column;
-    grid-area: nome;
-  }
-  
-  .cadastro form :nth-child(2){
-    display: flex;
-    flex-direction: column;
-    grid-area: cpf;
-  }
-  
-  .cadastro form :nth-child(3){
-    display: flex;
-    flex-direction: column;
-    grid-area: sexo;
-  }
-  
-  .cadastro form :nth-child(4){
-    display: flex;
-    flex-direction: column;
-    grid-area: email;
-  }
-  
-  .cadastro form :nth-child(5){
-    display: flex;
-    flex-direction: column;
-    grid-area: telefone;
-  }
-  
-  .cadastro form :nth-child(6){
-    display: flex;
-    flex-direction: column;
-    grid-area: nascimento;
-  }
-  
-  .cadastro form :nth-child(7){
-    display: flex;
-    flex-direction: column;
-    grid-area: estado;
-  }
-  
-  .cadastro form :nth-child(8){
-    display: flex;
-    flex-direction: column;
-    grid-area: cidade;
-  }
-  
-  .cadastro select,
-  .cadastro input{
-    height: 90px;
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 35px; 
-    font-size: 20px;
-    border: 1px solid;
-    outline: none;
-  }
-  
-  select,
-  input[type="date"]{
-    line-height: 90px;
-  }
-  
-  .cadastro input[type="text"]{
-    padding-left: 20px;
-  }
-  
-  .cadastro input[type="number"]{
-    padding-left: 20px;
-  }
-  
-  .cadastro input[type="date"]{
-    padding-left: 10px;
-  }
-  
-  .cadastro input[type="phone"]{
-    padding-left: 20px;
-  }
-  
-  .cadastro input[type="email"]{
-    padding-left: 20px;
-  }
-  
-  .cadastro select{
-    padding-left: 20px;
-  }
-  
-  label{
-    font-size: 1.5rem;
-  }
-  
-  .styled-select select{
-     -webkit-appearance: none;
-  }
-  
-  #nascimento{
-    flex-direction: row; 
-  }
-  
-  
-  /* BOTÕES REMOVER E SALVAR */
-  
-  #btnremover,
-  #btnsalvar{
-    border: none;
-    justify-content: center;
-    cursor: pointer;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1.5rem;
-  }
-  
-  #btnsalvar{
-    background: #339933;
-  }
-  
-  #btnremover{
-    background: #993333;
-  }
-  
-  
-  /* FLOATING BUTTON */
-  
-  #add{
-    position: fixed;
-    bottom: 5%;
-    right: 5%;
-    font-size: 80px;
-    color: rgba(255, 51, 89, 0.95);
-    cursor: pointer;
-  }
-  
-  
-  
-  @media screen and (min-width: 600px){
-    .cadastro form{
-      display: grid;
-  
-      grid-template-areas: "nome nome"
-                           "cpf sexo"
-                           "email email"
-                           "nascimento telefone"
-                           "estado cidade";
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: 1.5rem;
-    }
-    
-    .button-container-button{
-      display: flex;
-    }
-    
-    #btnsalvar{
-      margin-right: 1.5rem;
-    }
-  }
-  
-  
+}
