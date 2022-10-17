@@ -1,8 +1,8 @@
 //convertendo o texto e adicionando em tela;
-function converterParaDomElement(str) {
-    let parser = new DOMParser();
-    let doc = parser.parseFromString(str, 'text/html');
-    return doc.body;
+ function converterParaDomElement(str) {
+   let parser = new DOMParser();
+   let doc = parser.parseFromString(str, 'text/html');
+   return doc.body;
   };
   
   //pegando os dados do formulário
