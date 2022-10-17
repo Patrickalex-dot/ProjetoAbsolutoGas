@@ -31,6 +31,31 @@
                     <input type="text" name="nomeCompleto" id="nomeCompleto">
                     <i class="fa-solid fa-user"></i>
                 </div>
+                <div class="col-6">
+                    <label for="nascimento">Nascimento</label>
+                    <input type="date" name="nascimento" id="nascimento" placeholder="00/00/0000">
+                    <i class="fa-solid fa-calendar"></i>
+                </div>
+
+                <div class="col-6">
+                    <label for="cpf">CPF</label>
+                    <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00">
+                    <i class="fa-solid fa-address-card"></i>
+                </div>
+                <div class="col-5">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" name="telefone" id="telefone" placeholder="00000-0000">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="col-5">
+                    <label for="tipo">Tipo</label>
+                    <input type="text" name="tipoContato" id="tipoContato" placeholder="Whatsapp / Residencial / Comercial">
+                    <!-- <select name="tipo" id="tipo" >
+                        <option value="1" selected>Whatsapp</option>
+                        <option value="2">Residencial</option>
+                        <option value="3">Comercial</option>
+                    </select> -->
+                </div>
             
                 <div class="col-12">
                     <label for="rua">Rua</label>
@@ -56,27 +81,10 @@
                     <input type="text" name="referencia" id="referencia">
                     <i class="fa-solid fa-envelope"></i>
                 </div>
-                <div class="col-5">
-                    <label for="tipo">Tipo</label>
-                    <input type="text" name="tipoContato" id="tipoContato" placeholder="Whatsapp / Residencial / Comercial">
-                    <!-- <select name="tipo" id="tipo" >
-                        <option value="1" selected>Whatsapp</option>
-                        <option value="2">Residencial</option>
-                        <option value="3">Comercial</option>
-                    </select> -->
-                </div>
-                <div class="col-6">
-                    <label for="nascimento">Nascimento</label>
-                    <input type="date" name="nascimento" id="nascimento" placeholder="00/00/0000">
-                    <i class="fa-solid fa-calendar"></i>
-                </div>
-                <div class="col-6">
-                    <label for="cpf">CPF</label>
-                    <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00">
-                    <i class="fa-solid fa-address-card"></i>
-                </div>
+               
                 
-                <div class="col-12" id="areaEndereco">
+                
+                <!-- <div class="col-12" id="areaEndereco">
                     <label for="endereco">Endereço</label>
                     <input type="text" name="rua" id="rua" placeholder="rua" value="">
                     <br>
@@ -86,7 +94,7 @@
                     <br>
                     <label for="complemento">Complemento</label>
                     <textarea id="complemento" name="complemento"></textarea>
-                </div>
+                </div> -->
                 <div class="col-4">
                     <input type="submit" oneclick= cadastrar() value="Salvar cadastro">
                 </div>
