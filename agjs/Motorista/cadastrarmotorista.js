@@ -9,44 +9,27 @@ function converterParaDomElement(str) {
   async function CapturarDadosPessoa(){
     let nome = document.querySelector('#nome').value;  
     console.log(nome);
-    let cpf = document.querySelector('#cpf').value;  
-    console.log(cpf);
+    let cnh = document.querySelector('#cnh').value;  
+    console.log(cnh);
     let dataNascimento = document.querySelector('#dataNascimento').value;  
     console.log(dataNascimento);
     let telefone = document.querySelector('#telefone').value;  
     console.log(telefone);
-    let rua = document.querySelector('#rua').value;  
-    console.log(rua);
-    let numero = document.querySelector('#numero').value;  
-    console.log(numero);
-    let cidade = document.querySelector('#cidade').value;  
-    console.log(cidade);
-    let bairro = document.querySelector('#bairro').value;  
-    console.log(bairro);
-    let referencia = document.querySelector('#referencia').value;  
-    console.log(referencia);
-    let tipoContato = document.querySelector('#tipoContato').value;  
-    console.log(tipoContato);
     
-    let cliente = {
+    
+    let motorista = {
       nome,
-      cpf,
+      cnh,
       dataNascimento,
       telefone,
-      rua,
-      numero,
-      cidade,
-      bairro,
-      referencia,
-      tipoContato
     };
-    let SalvarClienteModel = {
-      cliente
+    let SalvarMotoristaModel = {
+      motorista
     };
   
-    console.log(SalvarClienteModel);
+    console.log(SalvarMotoristaModel);
   
-    let response = await EnviarApi(SalvarClienteModel);
+    let response = await EnviarApi(SalvarMotoristaModel);
     console.log(response);
   }
   
