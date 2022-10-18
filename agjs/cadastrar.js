@@ -11,7 +11,7 @@ function converterParaDomElement(str) {
     console.log(nome);
     let cpf = document.querySelector('#cpf').value;  
     console.log(cpf);
-    let dataNascimento = document.querySelector('#nascimento').value;  
+    let dataNascimento = new Date(document.querySelector('#nascimento').value);  
     console.log(dataNascimento);
     let telefone = document.querySelector('#telefone').value;  
     console.log(telefone);
@@ -25,11 +25,12 @@ function converterParaDomElement(str) {
     console.log(cidade);
     let bairro = document.querySelector('#bairro').value;  
     console.log(bairro);
-    let referencia = document.querySelector('#referencia').value;  
+    let referencia = document.querySelector('#complemento').value;  
     console.log(referencia);
     
     
     let cliente = {
+      idCliente : 0,
       nome,
       cpf,
       dataNascimento,
@@ -41,13 +42,13 @@ function converterParaDomElement(str) {
       referencia,
       tipoContato
     };
-    let SalvarClienteModel = {
+    let salvarClienteViewModel = {
       cliente
     };
   
-    console.log(SalvarClienteModel);
+    console.log(salvarClienteViewModel);
   
-    let response = await EnviarApi(SalvarClienteModel);
+    let response = await EnviarApi(salvarClienteViewModel);
     console.log(response);
   }
   
@@ -60,7 +61,7 @@ function converterParaDomElement(str) {
       method: 'POST',
       headers:{'content-type':'application/json'},
       //converte o objeto em um Json real;
-      body: JSON.stringify(viewmodel) 
+      body:JSON.stringify(viewmodel) 
     };
   
     //TODO: mudar a url para o seu localhost.

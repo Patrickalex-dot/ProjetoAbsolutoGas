@@ -4,33 +4,33 @@ async function PreencherTabelaCliente(resposta,limpar){
     if(limpar)
     tabela.innerHTML = '';
 
-    if(!resposta.sucess)
+    if(!resposta.sucesso)
         alert(resposta.mensage);
-    else if(resposta.resultado.lenght == 0 ){
+    else if(resposta.clientes.lenght == 0 ){
         tabela.innerHTML = 'Não há registro para exibir.';
     }
     else {
-        resposta.resultado.forEach(function(e){
+        resposta.clientes.forEach(function(e){
             let linha = document.createElement('tr');
             linha.addEventListener('click',()=>{
-                window.location.href ="" + e.id//LEMBRA DE COLOCAR O CAMINHO AQUI 
+                window.location.href ="" + e.idCliente//LEMBRA DE COLOCAR O CAMINHO AQUI 
             });
 
             let idInput = document.createElement('input');
             idInput.type = 'hidden';
-            let nomeTb = document.createElement('tb');
+            let nomeTb = document.createElement('tr');
             nomeTb.classList.add('row-nomeCompleto-cliente');
-            let cpfTb = document.createElement('tb');
-            cpfTb = classList.add('row-cpf-cliente');
-            let nascimentoTb = document.createElement('tb');
-            nascimentoTb = classList.add('row-nascimento-cliente');
-            let telefoneTb = document.createElement('tb');
-            telefoneTb = classList.add('row-telefone-cliente');
+            let cpfTb = document.createElement('tr');
+            cpfTb.classList.add('row-cpf-cliente');
+            let nascimentoTb = document.createElement('tr');
+            nascimentoTb.classList.add('row-nascimento-cliente');
+            let telefoneTb = document.createElement('tr');
+            telefoneTb.classList.add('row-telefone-cliente');
             
             idInput.value = e.id;
-            nomeTb.innerHTML = e.nomeCompleto;
+            nomeTb.innerHTML = e.nome;
             cpfTb.innerHTML = e.cpf;
-            nascimentoTb.innerHTML = e.nascimento;
+            nascimentoTb.innerHTML = e.dataNascimento;
             telefoneTb.innerHTML = e.telefone;
 
             linha.appendChild(idInput);
