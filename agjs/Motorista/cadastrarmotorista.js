@@ -7,48 +7,29 @@ function converterParaDomElement(str) {
   
   //pegando os dados do formulário
   async function CapturarDadosPessoa(){
-    let nome = document.querySelector('#nomeCompleto').value;  
+    let nome = document.querySelector('#nome').value;  
     console.log(nome);
-    let cpf = document.querySelector('#cpf').value;  
-    console.log(cpf);
-    let dataNascimento = new Date(document.querySelector('#nascimento').value);  
+    let cnh = document.querySelector('#cnh').value;  
+    console.log(cnh);
+    let dataNascimento = document.querySelector('#dataNascimento').value;  
     console.log(dataNascimento);
     let telefone = document.querySelector('#telefone').value;  
     console.log(telefone);
-    let tipoContato = document.querySelector('#tipoContato').value;
-    console.log(tipoContato);
-    let rua = document.querySelector('#rua').value;  
-    console.log(rua);
-    let numero = document.querySelector('#numero').value;  
-    console.log(numero);
-    let cidade = document.querySelector('#cidade').value;  
-    console.log(cidade);
-    let bairro = document.querySelector('#bairro').value;  
-    console.log(bairro);
-    let referencia = document.querySelector('#complemento').value;  
-    console.log(referencia);
     
     
-    let cliente = {
-      idCliente : 0,
+    let motorista = {
       nome,
-      cpf,
+      cnh,
       dataNascimento,
       telefone,
-      rua,
-      numero,
-      cidade,
-      bairro,
-      referencia,
-      tipoContato
     };
-    let salvarClienteViewModel = {
-      cliente
+    let SalvarMotoristaModel = {
+      motorista
     };
   
-    console.log(salvarClienteViewModel);
+    console.log(SalvarMotoristaModel);
   
-    let response = await EnviarApi(salvarClienteViewModel);
+    let response = await EnviarApi(SalvarMotoristaModel);
     console.log(response);
   }
   
@@ -61,7 +42,7 @@ function converterParaDomElement(str) {
       method: 'POST',
       headers:{'content-type':'application/json'},
       //converte o objeto em um Json real;
-      body:JSON.stringify(viewmodel) 
+      body: JSON.stringify(viewmodel) 
     };
   
     //TODO: mudar a url para o seu localhost.
