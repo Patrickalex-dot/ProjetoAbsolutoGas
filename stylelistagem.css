@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
+body *{
+    
+}
+
+table {
+  width: 100%
+}
+table * {
+  text-align:left
+}
+tr, td {
+  padding: 5px
+}
+
+tr:nth-child(even) {
+  background: #ddd
+}
+.container1{
+    background-color: rgb(136, 236, 158);
+    padding: 10px;
+}
