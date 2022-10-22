@@ -4,29 +4,7 @@ async function getPessoaId(){
     PreencherFormulario(res);
 }
 
-async function remover (){
-    let id = document.querySelector("#id-cliente").value;
 
-    const options = {
-        method : 'DELETE',
-        Headers :{'content-type':'aplication/json'}
-    };
-    const req = await fetch('https://localhost:44345/cliente/remover?nome='+nome, options)
-    .then(response =>{
-        return response.json();
-    })
-    .catch(erro =>{
-        console.log(erro);
-        return erro;
-    });
-    if(req.sucesso){
-        alert(req.mensagem);
-        voltar();
-    }
-    else {
-        alert (req.mensagem);
-    }
-}
 async function PreencherFormulario(json){
 
     let dadosForm = document.querySelector('#form');
@@ -130,7 +108,7 @@ async function Atualizar(){
     }
 }
 function voltar(){
-    window.location.href ='clientes/listarClientes.js';
+    window.location.href ='../../listagem.html';
 }
 function convertToDate(data){
     var pattern = /^(d{1,2})\/(\d{4})$/;
