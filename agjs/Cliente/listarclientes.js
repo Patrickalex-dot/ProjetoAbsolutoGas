@@ -12,10 +12,24 @@ async function PreencherTabelaCliente(resposta,limpar){
     else {
         resposta.clientes.forEach(function(e){
             let linha = document.createElement('tr');
-            linha.addEventListener('click',()=>{
-                window.location.href ="" + e.idCliente//LEMBRA DE COLOCAR O CAMINHO AQUI 
-            });
+            let botaoEditar = document.createElement('input');
+            botaoEditar.value ='Editar'
+            botaoEditar.type = 'button';
+            botaoEditar.addEventListener('click',()=>{
+                    alert('as');
+                    window.location.href ="agjs/cliente/atualizarcliente.html?id=" + e.idCliente
+                 });
 
+
+            let botaoRemover = document.createElement('input');
+            botaoRemover.value = 'Remover'
+            botaoRemover.type = 'button';
+            botaoRemover.addEventListener('click',async ()=>{
+                     alert('dsds');
+                     await remover(e.idCliente);
+                });
+           
+            
             let idInput = document.createElement('input');
             idInput.type = 'hidden';
             let nomeTb = document.createElement('td');
@@ -34,6 +48,9 @@ async function PreencherTabelaCliente(resposta,limpar){
             linha.appendChild(nomeTb);
             linha.appendChild(cpfTb);
             linha.appendChild(telefoneTb);
+
+            linha.appendChild(botaoEditar);
+            linha.appendChild(botaoRemover);
 
             tabela.appendChild(linha);
         })
@@ -54,6 +71,32 @@ async function ListarClientes(){
         return erro;
     });
     return req;
+}
+
+async function remover (id){
+
+    const options = {
+        method : 'DELETE',
+        Headers :{'content-type':'aplication/json'}
+    };
+    const req = await fetch('https://localhost:44345/cliente/RemoverPorId?id='+id, options)
+    .then(response =>{
+        return response.json();
+    })
+    .catch(erro =>{
+        console.log(erro);
+        return erro;
+    });
+    if(req.value.sucesso){
+        alert(req.value.mensagem);
+        voltar();
+    }
+    else {
+        alert (req.mensagem);
+    }
+}
+function voltar(){
+    window.location.href ='listagem.html';
 }
 (async() =>{
     let res =await ListarClientes();
